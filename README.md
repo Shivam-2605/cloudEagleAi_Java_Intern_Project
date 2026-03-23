@@ -2,7 +2,7 @@
 
 A high-performance auditing tool built with Python (FastAPI + Flask) designed to generate structured access reports for large GitHub organizations. This service efficiently maps "Who has access to which repositories" and is architected to scale to 100+ repositories and 1000+ users using asynchronous I/O.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Tech Stack](#-tech-stack)
 - [How to Run](#-how-to-run)
@@ -13,7 +13,7 @@ A high-performance auditing tool built with Python (FastAPI + Flask) designed to
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Component | Technology | Purpose |
 |---|---|---|
@@ -25,7 +25,7 @@ A high-performance auditing tool built with Python (FastAPI + Flask) designed to
 
 ---
 
-## 🏃 How to Run
+## How to Run
 
 ### 1. Prerequisites
 
@@ -78,7 +78,7 @@ Open your browser to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 🔑 Authentication Configuration
+## Authentication Configuration
 
 This application uses a GitHub Personal Access Token (Classic) for secure communication with the GitHub REST API.
 
@@ -91,7 +91,7 @@ This application uses a GitHub Personal Access Token (Classic) for secure commun
 
 ---
 
-## 📡 How to Call the API
+## How to Call the API
 
 While the dashboard provides a visual interface, you can call the API directly:
 
@@ -121,7 +121,7 @@ GET /health
 
 ---
 
-## 🏗 Project Architecture
+## Project Architecture
 
 The project follows a modular, clean-code organization:
 
@@ -143,7 +143,7 @@ github-access-report/
 
 ---
 
-## 🧠 Design Decisions & Assumptions
+## Design Decisions & Assumptions
 
 ### 1. Handling Scale with Asynchronous Concurrency
 
@@ -176,7 +176,7 @@ GitHub's API provides data per-repository. To provide a "User-Centric" view, I i
 
 ---
 
-## ✅ Final Checklist for Your Public Repo
+## Final Checklist for Your Public Repo
 
 - [ ] **Full Source Code:** Ensure all files (`app/`, `frontend/`, `requirements.txt`, etc.) are uploaded.
 - [ ] **Clean Code:** Remove any hardcoded tokens or secrets.
