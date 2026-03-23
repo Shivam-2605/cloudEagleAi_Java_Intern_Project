@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Org Access Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub Access Report</h1>
+            <p>Generate a structural access map for any GitHub Organization.</p>
+        </header>
+
+        <section class="search-section">
+            <form id="report-form">
+                <input type="text" id="org-input" placeholder="Organization name (e.g. microsoft)" required>
+                
+                <label class="checkbox-label">
+                    <input type="checkbox" id="private-checkbox">
+                    Include Private Repos
+                </label>
+
+                <button type="submit" id="generate-btn">Generate Report</button>
+            </form>
+            <div id="error-message" class="error hidden"></div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Fetching repositories and collaborators. This might take a moment...</p>
+        </div>
+
+        <!-- Results Section -->
+        <section id="results-section" class="hidden">
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <span class="stat-label">Repositories</span>
+                    <span class="stat-value" id="stat-repos">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Users</span>
+                    <span class="stat-value" id="stat-users">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Total Access Entries</span>
+                    <span class="stat-value" id="stat-entries">0</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="view-toggles">
+                    <button class="toggle-btn active" data-view="user">By User</button>
+                    <button class="toggle-btn" data-view="repo">By Repository</button>
+                </div>
+                <div class="export-buttons">
+                    <button id="export-json">Export JSON</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="report-table">
+                    <thead id="table-head">
+                        <!-- Injected via JS -->
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
